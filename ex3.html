@@ -1,0 +1,90 @@
+<!--https://curryyou.tistory.com/192-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #target {
+            background-color:white;
+            color:red;
+        }
+    </style>
+    <script>
+        function setcolor(color){
+            var alist=document.querySelectorAll('a');
+            var i=0;
+            while(i<alist.length){
+                alist[i].style.color=color;
+                i+=1;
+            }
+        }
+        function func(self){
+            var sc=document.querySelector('#target');
+            if(self.value=='night'){
+                sc.style.backgroundColor = 'black'; 
+                self.value='day';
+                setcolor('powderblue');
+            }else{
+                sc.style.backgroundColor = 'white'; 
+                self.value='night';
+                setcolor('blue');
+            }
+        }
+    </script>
+</head>
+<body id="target">
+    <h1><a href="ex1.html">WEB</a></h1>
+    <h2>1&lt2</h2> <!--&lt : less than <, -->
+    <h2>1&gt2</h2> <!--&gt : more than >, -->
+    <input type="button" value="night" onclick="
+        document.querySelector('#target').style.backgroundColor = 'black'; 
+        document.querySelector('#target').style.color = 'green'; 
+    ">
+    <input type="button" value="day" onclick="
+        document.querySelector('#target').style.backgroundColor = 'white'; 
+        document.querySelector('#target').style.color = 'red'; 
+    ">
+
+    <input id="night_day" type="button" value="night" onclick="
+        if(document.querySelector('#night_day').value=='night'){
+            document.querySelector('#target').style.backgroundColor = 'black'; 
+            document.querySelector('#target').style.color = 'green';  
+            document.querySelector('#night_day').value='day';
+        }else{
+            document.querySelector('#target').style.backgroundColor = 'white'; 
+            document.querySelector('#target').style.color = 'red'; 
+            document.querySelector('#night_day').value='night';
+        }
+
+    ">
+
+    
+    <ol>
+        <li><a href="ex1.html">HTML</a></li>
+        <li><a href="ex2.html">CSS</a></li>
+        asdasd
+    </ol>
+
+    <input id="night_day2" type="button" value="night" onclick="
+        if(document.querySelector('#night_day2').value=='night'){
+            document.querySelector('#target').style.backgroundColor = 'black'; 
+            document.querySelector('#target').style.color = 'green';  
+            document.querySelector('#night_day2').value='day';
+        }else{
+            document.querySelector('#target').style.backgroundColor = 'white'; 
+            document.querySelector('#target').style.color = 'red'; 
+            document.querySelector('#night_day2').value='night';
+        }
+
+    ">
+    <br>
+    <input type="button" value="night" onclick="
+        func(this);
+
+    ">
+
+</body>
+</html>
